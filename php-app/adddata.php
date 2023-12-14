@@ -14,38 +14,38 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Database connection details
         $host = 'db';
-        $username = 'db_user';
-        $password = 'db_password';
+        $user = 'db_user';
+        $pass = 'db_password';
         $db = 'mydatabase';
         $charset = 'utf8mb4';
 
         // Create a connection
-        $conn = new mysqli($host, $username, $password, $db);
+        $mysqli = new mysqli($host, $user, $pass, $db);
 
         // Check the connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
+        if ($mysqli->connect_error) {
+            die("Connection failed: " . $mysqli->connect_error);
         }
 
         // Get data from the request
-        $name = $conn->real_escape_string($_POST['name']);
-        $email = $conn->real_escape_string($_POST['email']);
+        $name = $mysqli->real_escape_string($_POST['name']);
+        $email = $mysqli->real_escape_string($_POST['email']);
 
         // Insert data into the database
-        $sql = "INSERT INTO user (name, email) VALUES ('$name', '$email')";
+        $sql = "INSERT INTO users (name, email) VALUES ('$name', '$email')";
 
-        if ($conn->query($sql) === TRUE) {
+        if ($mysqli->query($sql) === TRUE) {
             echo '<p>Data inserted successfully!</p>';
             
             // Redirect to index.php after successful submission
-            header("Location: index.php");
+            echo '<a href="index.php">Go To Main Page!</p>';
             exit(); // Make sure to exit to prevent further execution
         } else {
-            echo '<p>Error: ' . $sql . '<br>' . $conn->error . '</p>';
+            echo '<p>Error: ' . $sql . '<br>' . $mysqli->error . '</p>';
         }
 
         // Close the connection
-        $conn->close();
+        $mysqli->close();
     }
     ?>
 
