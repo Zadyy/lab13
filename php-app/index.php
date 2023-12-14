@@ -27,9 +27,9 @@ $mysqli->query("CREATE TABLE IF NOT EXISTS orders (
 )");
 
 // Insert sample data
-$mysqli->query("INSERT INTO users (name, email) VALUES ('John Doe', 'john@example.com')");
-$mysqli->query("INSERT INTO orders (user_id, product_name) VALUES (1, 'Product A')");
-$mysqli->query("INSERT INTO orders (user_id, product_name) VALUES (1, 'Product B')");
+// $mysqli->query("INSERT INTO users (name, email) VALUES ('John Doe', 'john@example.com')");
+// $mysqli->query("INSERT INTO orders (user_id, product_name) VALUES (1, 'Product A')");
+// $mysqli->query("INSERT INTO orders (user_id, product_name) VALUES (1, 'Product B')");
 
 // Display data
 echo "<h1>Users</h1>";
