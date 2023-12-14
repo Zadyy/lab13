@@ -31,7 +31,7 @@
         $name = $conn->real_escape_string($_POST['name']);
 
         // Insert data into the database
-        $sql = "INSERT INTO user (name) VALUES ('$name')";
+        $sql = "INSERT INTO product (name) VALUES ('$name')";
 
         if ($conn->query($sql) === TRUE) {
             echo '<p>Data inserted successfully!</p>';
