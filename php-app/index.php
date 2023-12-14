@@ -50,4 +50,5 @@ $mysqli->close();
 ?>
 
 <h1>Want To Add Data?</h1>
-<a href="adddata.php">Add Data!</a>"
+<a href="adddata.php">Add User Data!</a>
+<a href="addproductdata.php">Add Product Data!</a>
