@@ -44,5 +44,10 @@ while ($row = $resultOrders->fetch_assoc()) {
     echo "<p>Order ID: {$row['id']}, User ID: {$row['user_id']}, Product: {$row['product_name']}</p>";
 }
 
+
+
 $mysqli->close();
 ?>
+
+<h1>Want To Add Data?</h1>
+<a href="adddata.php">Add Data!</a>"
